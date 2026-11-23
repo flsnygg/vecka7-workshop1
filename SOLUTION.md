@@ -4,6 +4,8 @@
 
 ```bash
 git status
+git add -p
+git commit
 git show --stat HEAD
 git rm <filnamn>
 git commit --amend --no-edit
@@ -15,6 +17,9 @@ git status
 
 ## Därför händer det
 
+Du har gjort flera ändringar i samma fil, men alla ändringar ska inte ingå i samma commit.
+
+Git sparar ändringarna i mindre delar, vilket gör att du kan välja exakt vilka ändringar som ska läggas i staging och ingå i nästa commit.
 Filen följde med när den senaste commiten skapades och blev därför en del av commiten.
 
 Eftersom felet finns i den senaste commiten kan du ta bort filen och sedan ändra samma commit i stället för att skapa en helt ny commit.
@@ -32,6 +37,9 @@ Git kan därför återställa filen till den senaste committade versionen och ta
 ## Tips
 
 - Använd `git status` för att se vilka filer som har ändrats.
+- Använd `git add -p` för att välja vilka ändringar som ska läggas i staging.
+- I det här caset ska du bara committa de ändringar som hör till uppgiften.
+- Kontrollera med `git status` att övriga ändringar fortfarande finns kvar i arbetskatalogen.
 - Använd `git restore <filnamn>` för att ångra ändringar i en specifik fil.
 - Om flera filer ska återställas kan du ange flera filnamn.
 - Kontrollera med `git status` att ändringarna är borta.
