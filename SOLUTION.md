@@ -4,6 +4,7 @@
 
 ```bash
 git status
+git restore --staged <filnamn>
 git add -p
 git commit
 git show --stat HEAD
@@ -17,6 +18,16 @@ git status
 
 ## Därför händer det
 
+När du använder `git add` läggs filens ändringar i staging och blir redo att ingå i nästa commit.
+
+Git sparar fortfarande ändringarna i arbetskatalogen även om filen tas bort från staging.
+
+## Tips
+
+- Använd `git status` för att se vilka filer som finns i staging.
+- Använd `git restore --staged <filnamn>` för att ta bort filen från staging.
+- Kontrollera med `git status` att filen inte längre är staged.
+- Kontrollera att ändringarna fortfarande finns kvar i arbetskatalogen.
 Du har gjort flera ändringar i samma fil, men alla ändringar ska inte ingå i samma commit.
 
 Git sparar ändringarna i mindre delar, vilket gör att du kan välja exakt vilka ändringar som ska läggas i staging och ingå i nästa commit.
